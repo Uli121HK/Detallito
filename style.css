@@ -86,14 +86,14 @@ body {
 .text-message {
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 17%;
     transform: translateX(-50%);
     /* MODIFICAR: Color del texto */
     color: #f0f0f0;
     text-align: center;
     opacity: 0;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    font-size: 28px;
+    font-size: 14px;
 }
 
 #first-message {
