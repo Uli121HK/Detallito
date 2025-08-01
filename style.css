@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* MODIFICAR: Color de fondo de la página */
+  background: linear-gradient(to bottom, #000000, #1A237E, #4A148C);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.heart-container {
+    position: relative;
+    width: clamp(250px, 60vw, 450px);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.neon-chaser {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    /* MODIFICAR: Duración de una vuelta completa de la animación (ej: 4s = 4 segundos) */
+    animation: neonChase 4s linear infinite;
+}
+
+#neon-pink {
+    /* MODIFICAR: Color de la primera línea de neón y su brillo */
+    stroke: #ff00aa;
+    filter:
+            drop-shadow(0 0 3px #ff00aa)
+            drop-shadow(0 0 8px #ff00aa)
+            drop-shadow(0 0 15px #ff00aa);
+    /* MODIFICAR: Retraso para el inicio de esta línea */
+    animation-delay: 0s;
+}
+
+#neon-blue {
+    /* MODIFICAR: Color de la segunda línea de neón y su brillo */
+    stroke: #00ccff;
+    filter:
+            drop-shadow(0 0 3px #00ccff)
+            drop-shadow(0 0 8px #00ccff)
+            drop-shadow(0 0 15px #00ccff);
+    /* MODIFICAR: Retraso para el inicio de esta línea */
+    animation-delay: 1.33s;
+}
+
+#neon-purple {
+    /* MODIFICAR: Color de la tercera línea de neón y su brillo */
+    stroke: #be00ff;
+    filter:
+            drop-shadow(0 0 3px #be00ff)
+            drop-shadow(0 0 8px #be00ff)
+            drop-shadow(0 0 15px #be00ff);
+    /* MODIFICAR: Retraso para el inicio de esta línea */
+    animation-delay: 2.66s;
+}
+
+
+@keyframes neonChase {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: var(--path-length-negative);
+    }
+}
+
+.text-message {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    /* MODIFICAR: Color del texto */
+    color: #f0f0f0;
+    text-align: center;
+    opacity: 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    font-size: 28px;
+}
+
+#first-message {
+    /* Aparece durante 2s, tras esperar 1s */
+    animation: fadeInText 2s ease-in-out 1s forwards,
+               /* Desaparece durante 2s, tras esperar 7s (1s de retraso + 2s de aparición + 4s visible) */
+               fadeOutText 2s ease-in-out 7s forwards;
+}
+#first2-message {
+    /* Aparece durante 2s, tras esperar 1s */
+    animation: fadeInText 2s ease-in-out 9s forwards,
+               /* Desaparece durante 2s, tras esperar 7s (1s de retraso + 2s de aparición + 4s visible) */
+               fadeOutText 2s ease-in-out 15s forwards;
+}
+
+#second-message {
+    /* Aparece después de que el primer mensaje haya desaparecido (retraso 7s + 2s de desaparición) */
+    animation: fadeInText 2s ease-in-out 17s forwards,
+               /* Desaparece después de 4s visible (9s de retraso + 2s de aparición + 4s visible) */
+               fadeOutText 2s ease-in-out 23s forwards;
+}
+
+#tercer-message {
+    /* Aparece después de que el segundo mensaje haya desaparecido (retraso 15s + 2s de desaparición) */
+    animation: fadeInText 2s ease-in-out 25s forwards,
+               /* Desaparece después de 4s visible (17s de retraso + 2s de aparición + 4s visible) */
+               fadeOutText 2s ease-in-out 31s forwards;
+}
+
+#four-message {
+    /* Aparece después de que el tercer mensaje haya desaparecido (retraso 23s + 2s de desaparición) */
+    animation: fadeInText 2s ease-in-out 33s forwards,
+               /* Desaparece después de 4s visible (25s de retraso + 2s de aparición + 4s visible) */
+               fadeOutText 2s ease-in-out 39s forwards;
+}
+
+#five-message {
+    /* Aparece después de que el cuarto mensaje haya desaparecido */
+    animation: fadeInText 2s ease-in-out 41s forwards,
+               /* Desaparece después de 4s visible */
+               fadeOutText 2s ease-in-out 47s forwards;
+}
+
+#six-message {
+    /* Aparece después de que el quinto mensaje haya desaparecido */
+    animation: fadeInText 2s ease-in-out 49s forwards,
+               /* Desaparece después de 4s visible */
+               fadeOutText 2s ease-in-out 55s forwards;
+}
+
+#seven-message {
+    /* Aparece después de que el sexto mensaje haya desaparecido */
+    animation: fadeInText 2s ease-in-out 57s forwards,
+               /* Desaparece después de 4s visible */
+               fadeOutText 2s ease-in-out 63s forwards;
+}
+
+#eight-message {
+    /* Aparece después de que el séptimo mensaje haya desaparecido */
+    animation: fadeInText 2s ease-in-out 65s forwards,
+               /* Desaparece después de 4s visible */
+               fadeOutText 2s ease-in-out 71s forwards;
+}
+#nine-message {
+    /* Aparece después de que el séptimo mensaje haya desaparecido */
+    animation: fadeInText 2s ease-in-out 73s forwards,
+               /* Desaparece después de 4s visible */
+               fadeOutText 2s ease-in-out 79s forwards;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeOutText {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+                           
+#petals-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    /* MODIFICAR: Colores de los pétalos */
+    background: radial-gradient(ellipse at center, #cc8f99 0%, #e094a0 50%, #e6677c 100%);
+    border-radius: 0 100% 0 100%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
